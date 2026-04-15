@@ -22,6 +22,7 @@ pipeline {
                   sh 'sudo chmod 666 /var/run/docker.sock'
                   sh 'sudo usermod -aG docker $USER'
                   sh 'sudo systemctl status docker.service'
+                  sh 'sudo systemctl start docker.service'
               }
           }
           stage('Test create conatianer') {
