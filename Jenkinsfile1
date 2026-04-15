@@ -9,7 +9,8 @@ pipeline {
          stage('CkeckOut SCM') {
             steps {
          // sh "git clone https://github.com/srcmed/b3depogithub.git"
-          git branch: 'main', credentialsId: 'root', url: 'https://github.com/srcmed/b3depogithub.git'
+        //  git branch: 'main', credentialsId: 'root', url: 'https://github.com/srcmed/b3depogithub.git'
+        git branch: 'main', credentialsId: 'user-srcmed', url: 'https://github.com/srcmed/b3depogithub.git'
             }
          }  
     }
