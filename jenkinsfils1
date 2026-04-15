@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+         stage('Clean mon projet') {
+            steps {
+               cleanWs()
+            }
+        } 
+         stage('CkeckOut SCM') {
+            steps {
+            //  sh "git clone https://github.com/srcmed/b3depogithub.git"
+            git branch: 'main', credentialsId: 'root', url: 'https://github.com/srcmed/b3depogithub.git'
+            }
+         }  
+    }
