@@ -26,7 +26,7 @@ pipeline {
               }
           }
           stage('Test create conatianer') {
-             steps 
+             steps {
              sh 'docker image ls'
              sh 'docker ps'
              sh 'docker stop conteneur01'
