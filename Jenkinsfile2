@@ -28,7 +28,7 @@ pipeline {
              steps {
              sh 'docker image ls'
              sh 'docker pull ubuntu/apache2'
-             sh 'docker run -d --name container01 --container01  ubuntu/apache2
+             sh 'docker run -d --name container01 --hostname container01  ubuntu/apache2
              sh ' docker ps'
             }
          }  
