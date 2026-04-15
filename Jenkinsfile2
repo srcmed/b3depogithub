@@ -1,16 +1,6 @@
 pipeline {
     agent any
        stages {
-        //  stage('CleanUp de Workspace'){
-          //   steps {
-          //      cleanWs()
-         //    }
-         //}
-       // stage('Cloner le GitHub'){
-          // steps {
-              //   git branch: 'main', url: 'https://github.com/srcmed/depotOnline26.git'
-           // }
-         //}
            stage('install Docker.io'){
               steps {
                   sh 'sudo apt autoremove docker.io docker-compose -y'
