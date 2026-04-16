@@ -35,4 +35,4 @@ EXPOSE 80 22
 RUN echo "root:password" | chpasswd
 
 # Démarrage de SSH (Apache sera lancé manuellement ou via Ansible)
-CMD ["/usr/sbin/apache2", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
