@@ -12,7 +12,7 @@ nano \
 python3 \
 sudo \
 sshpass \
-##&& rm -rf /var/lib/apt/lists/*
+&& rm -rf /var/lib/apt/lists/*
 
 # Préparation du service SSH
 RUN mkdir -p /var/run/sshd && ssh-keygen -A
