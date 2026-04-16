@@ -10,7 +10,7 @@ pipeline {
         stage('Create-conteneur') {
             steps {
               sh 'docker stop contapache01 && docker rm contapache01'
-              sh 'docker run -d --name contapache01 --hostname contapache01 --mount ./volumecontapache01:/var/www/html --network macvlan192 --ip 192.168.1.20 mon-apache2'
+              sh 'docker run -d --name contapache01 --hostname contapache01 --mount  --type=bind,./volumecontapache01,/var/www/html --network macvlan192 --ip 192.168.1.20 mon-apache2'
               sh 'docker start contapache01'
              // sh 'docker ps && docker exec contapache01 "ifconfig"'
               sh 'docker exec contapache01 service ssh start'
