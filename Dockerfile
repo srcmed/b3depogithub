@@ -5,14 +5,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Mise à jour + installation des paquets nécessaires
 RUN apt-get update && apt-get install -y \
 apache2 \
-openssh-server \
+ssh \
 iputils-ping \
 net-tools \
 nano \
 python3 \
 sudo \
 sshpass \
-&& rm -rf /var/lib/apt/lists/*
+##&& rm -rf /var/lib/apt/lists/*
 
 # Préparation du service SSH
 RUN mkdir -p /var/run/sshd && ssh-keygen -A
@@ -35,4 +35,4 @@ EXPOSE 80 22
 RUN echo "root:password" | chpasswd
 
 # Démarrage de SSH (Apache sera lancé manuellement ou via Ansible)
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/apache2", "-D"]
