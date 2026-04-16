@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+         stage('ChekOut-SCM') {
+            steps {
+                cleanWs()
+                git branch: 'main', credentialsId: 'user-srcmed', url: 'https://github.com/srcmed/b3depogithub.git'
+            }
+        }
+        stage('Build-image-nginx') {
+            steps {
+                sh 'docker build -t mon-nginx .'
+            }
+        }
+    }
+}    
